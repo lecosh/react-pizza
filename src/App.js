@@ -7,7 +7,7 @@ function App() {
       <div className="content">
         <div className="container">
           <div className="content__top">
-            <Categories onClickItem={(name) => console.log(name)} items={[
+            <Categories items={[
               'Мясные',
               'Вегетерианская',
               'Гриль',
