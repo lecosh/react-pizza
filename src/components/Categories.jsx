@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 export function Categories({ items, onClickItem }){
     const [activeItem, setActiveItem] = useState(0)
+    
     function onSelectedItem(index){
         setActiveItem(index)
     }
