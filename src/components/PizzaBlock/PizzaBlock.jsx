@@ -1,19 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import { PizzaLoadingBlock } from './PizzaLoadingBlock'
 
-PizzaBlock.propTypes = {
-    name: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string,
-    price: PropTypes.number.isRequired,
-    sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
-    types: PropTypes.arrayOf(PropTypes.number).isRequired,
-}
-PizzaBlock.defaultProps = {
-    types: []
-}
-
-export function PizzaBlock({ name, imageUrl, price, types, sizes }){
+export function PizzaBlock({ name, imageUrl, price, types, sizes, isLoading }){
     const typeNames = ['тонкое', 'традиционное']
     const availableSizes = [26, 30, 40]
     const [activeType, setActiveType] = useState(types[0])
@@ -33,7 +23,6 @@ export function PizzaBlock({ name, imageUrl, price, types, sizes }){
             />
             <h4 className="pizza-block__title">{name}</h4>
             <div className="pizza-block__selector">
-
                 <ul>
                     {
                         typeNames.map((type, index) => (
